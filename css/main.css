@@ -1,0 +1,238 @@
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+  --transition: 0.3s;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  list-style: none;
+}
+/* Start Component */
+.main-btn {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+}
+.main-btn:hover {
+  background-color: var(--red-color);
+  color: var(--green-color);
+  border: 1px solid var(--red-color);
+}
+.main-title:before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  background-color: var(--green-color);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* End Component */
+/* Start Navbar Section */
+.navbar {
+  background-color: var(--dark-color);
+}
+.navbar .navbar-toggler {
+  color: white;
+  border: 1px solid var(--green-color);
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar .nav-link {
+  color: white;
+  font-weight: bold;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--green-color);
+}
+.navbar .collapse .search {
+  color: var(--green-color);
+  border-left: 1px solid var(--green-color);
+  cursor: pointer;
+}
+/* End Navbar Section */
+/* Start Search section */
+.search-section {
+  background-color: rgb(25 40 63 / 80%);
+  z-index: 9999;
+  top: -100%;
+  transition: var(--transition);
+}
+.search-section.show {
+  top: 0;
+}
+.search-section form input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--green-color);
+  width: 300px;
+}
+.search-section form input[type="text"]:focus {
+  outline: none;
+}
+.search-section form input[type="text"]::placeholder {
+  color: var(--green-color);
+  opacity: 0.6;
+}
+.search-section form svg:first-of-type {
+  margin-left: 10px;
+}
+.search-section form svg:last-of-type {
+  top: 35px;
+  right: 45px;
+  cursor: pointer;
+  padding: 8px;
+}
+/* End Search section */
+/* Start Landing */
+.landing {
+  background-color: var(--dark-color);
+  min-height: calc(100vh - 72px);
+}
+/* End Landing */
+/* Start Services */
+.services .icons {
+  height: 200px;
+}
+.services .number {
+  font-size: 200px;
+  color: var(--section-color);
+}
+.services .icon {
+  color: var(--green-color);
+  padding-bottom: 20px;
+}
+.services .box h2 {
+  color: var(--yellow-color);
+}
+/* End Services */
+/* Start Portfolio */
+.portfolio {
+  background-color: var(--section-color);
+}
+.portfolio .shuffle li {
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+@media (max-width: 567px) {
+  .portfolio .shuffle {
+    flex-direction: column;
+    padding: 5px 0 !important;
+  }
+}
+.portfolio .shuffle li.active,
+.portfolio .shuffle li:hover {
+  background-color: var(--red-color);
+  color: white;
+}
+.portfolio .row .image {
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.portfolio .row .image::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: rgb(51 209 204 / 75%);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  left: calc(-100% - 5px);
+  transition: var(--transition);
+}
+.portfolio .row .image:hover::before {
+  left: 5px;
+}
+/* End Portfolio */
+/* Start About */
+.about .row .head,
+.team .head {
+  width: 750px;
+  max-width: 100%;
+}
+/* End About */
+/* Start Team */
+.team {
+  background-color: var(--section-color);
+}
+.team .title .h1 {
+  color: var(--yellow-color);
+}
+.team .card-body .card-title {
+  background-color: var(--green-color);
+  color: white;
+}
+/* End Team */
+/* Start Project */
+.project {
+  background-color: var(--dark-color);
+}
+/* End Project */
+/* Start Contact */
+.contact {
+  background-color: var(--yellow-color);
+}
+.contact form h4 {
+  letter-spacing: -1px;
+}
+.contact form input[type="text"] {
+  border: none;
+  border-bottom: 1px solid var(--dark-color);
+  color: var(--dark-color);
+}
+.contact form input[type="text"]::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+.contact form input[type="text"]:focus {
+  outline: none;
+}
+.contact form input[type="submit"] {
+  background-color: var(--dark-color) !important;
+  color: var(--yellow-color);
+}
+.contact form input[type="submit"]:hover {
+  border: 1px solid var(--dark-color);
+  color: var(--red-color);
+}
+/* End Contact */
+/* Start footer */
+footer {
+  background-color: var(--dark-color);
+}
+footer .copyright span:first-child {
+  color: var(--yellow-color);
+}
+footer .copyright span:last-child {
+  color: var(--green-color);
+}
+footer ul li {
+  cursor: pointer;
+}
+footer .social .facebook {
+  background-color: #1877f2;
+}
+footer .social .twitter {
+  background-color: #1da1f2;
+}
+footer .social .google {
+  background-color: #dd4b39;
+}
+footer .social .youtube {
+  background-color: #ff0000;
+}
+/* End footer */
